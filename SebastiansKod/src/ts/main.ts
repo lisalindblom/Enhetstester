@@ -57,7 +57,7 @@ export function createHtml(todos: Todo[]) {
     "todos"
   ) as HTMLUListElement;
 
-// tömmer containern?
+// tömmer containern
   todosContainer.innerHTML = "";
 
 //loopar igenom listan och skriver ut varje todo i en li-tagg

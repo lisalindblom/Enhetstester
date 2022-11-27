@@ -38,12 +38,7 @@ test ('should not add if todo <2', ()=> {
 
 //createHtml testa:
 // -saker hamnar i local storage, ska testet hämta det då?
-// test ("should set items to localStorage", ()=> {
-//     let todo:Todo = [new Todo("Inlämning", false)];   
-//     functions.createHtml(todo.text);
-//     let todos: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
-//     expect(todo.text)
-// });
+
 // -if satsen- lägger till en scss class
 // -en till kotroll på om scss class läggs till
 // -en eventlistener som sätter igång
@@ -51,6 +46,10 @@ test ('should not add if todo <2', ()=> {
 //toggleTodo 
 describe ("toggleTodo", ()=> {
 
+    beforeEach(() => {
+        jest.resetModules();
+        jest.restoreAllMocks();
+      });
     test ('should change boolean on todo', ()=>{
         let todoList: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
         let todos: Todo = new Todo('träna',false);
